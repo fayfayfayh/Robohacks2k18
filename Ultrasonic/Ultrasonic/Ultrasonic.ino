@@ -4,16 +4,16 @@
 // more info at http://www.ardublog.com
 // Wiki: https://github.com/JRodrigoTech/Ultrasonic-HC-SR04/wiki/Plug-&-Play
 
-#include <Ultrasonic.h>
+#include "Ultrasonic.h"
 
-Ultrasonic ultrasonic(5,6); // (Trig PIN,Echo PIN)
+Ultrasonic ultrasonic(12,13); // (Trig PIN,Echo PIN)
 
 void setup() {
   Serial.begin(9600);
-  pinMode(4, OUTPUT); // VCC pin
-  pinMode(7, OUTPUT); // GND ping
-  digitalWrite(4, HIGH); // VCC +5V mode  
-  digitalWrite(7, LOW);  // GND mode
+  pinMode(12, OUTPUT); // trig pin
+  pinMode(13, INPUT); // echo ping
+  digitalWrite(12, HIGH); 
+  digitalWrite(13, LOW);  
 }
 
 void loop()
